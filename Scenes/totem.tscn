@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b1qrhyp5j6ikm"]
+
+[ext_resource type="Texture2D" uid="uid://da21wiyda7sm5" path="res://Assets/totem.png" id="1_53tes"]
+[ext_resource type="Script" uid="uid://18f277trs2ee" path="res://Scenes/totem.gd" id="1_ybyp1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ybyp1"]
+radius = 51.009804
+
+[node name="totem" type="Node2D" unique_id=431673451]
+script = ExtResource("1_ybyp1")
+
+[node name="TotemTravel" type="Sprite2D" parent="." unique_id=687108018]
+position = Vector2(-2, -2)
+scale = Vector2(2.5648148, 2.6375)
+texture = ExtResource("1_53tes")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1202942629]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=371307984]
+shape = SubResource("CircleShape2D_ybyp1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bt1aqbo36u65c"]
+
+[ext_resource type="Texture2D" uid="uid://dq7aqd3hk7q83" path="res://Assets/sword (2).png" id="1_5i66w"]
+[ext_resource type="Script" uid="uid://diuu4rasllx26" path="res://Scripts/plunge.gd" id="1_sdyqx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdyqx"]
+size = Vector2(30, 28)
+
+[node name="plunge" type="Area2D" unique_id=1150695026]
+script = ExtResource("1_sdyqx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=779400133]
+self_modulate = Color(1.942, 1.942, 1.942, 1)
+texture = ExtResource("1_5i66w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=544935524]
+shape = SubResource("RectangleShape2D_sdyqx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

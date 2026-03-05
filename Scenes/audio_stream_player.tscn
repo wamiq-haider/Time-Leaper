@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d27qxsox21ygr"]
+
+[ext_resource type="AudioStream" uid="uid://sw1q83bu56l2" path="res://Assets/Royalty Free Music - 8 Bit Dungeon Level - Electronica - Kevin MacLeod.mp3" id="1_px1li"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=178915731]
+stream = ExtResource("1_px1li")
+volume_db = -16.529
+autoplay = true

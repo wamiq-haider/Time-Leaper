@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dtpqm706vn305"]
+
+[ext_resource type="Texture2D" uid="uid://46kfjq28v8q6" path="res://Assets/Free_Version_V1003/Props/Animated_Props/door_03_front.png" id="1_w6aom"]
+[ext_resource type="Script" uid="uid://d2ne7vyh5futm" path="res://Scenes/door.gd" id="2_p0e35"]
+[ext_resource type="AudioStream" uid="uid://2qgok7p6003m" path="res://Assets/doorOpen.mp3" id="3_fahql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6aom"]
+size = Vector2(24, 26.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6aom"]
+atlas = ExtResource("1_w6aom")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0e35"]
+atlas = ExtResource("1_w6aom")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fahql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6aom")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0e35")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0e35"]
+radius = 20.0
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1894047997]
+script = ExtResource("2_p0e35")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1286153294]
+position = Vector2(26, -9)
+shape = SubResource("RectangleShape2D_w6aom")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=616636317]
+self_modulate = Color(0.56743413, 0.56743413, 0.56743413, 1)
+position = Vector2(26, -2)
+sprite_frames = SubResource("SpriteFrames_fahql")
+animation = &"closed"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2057952020]
+
+[node name="detector" type="CollisionShape2D" parent="Area2D" unique_id=1797629862]
+position = Vector2(26, -7)
+shape = SubResource("CircleShape2D_p0e35")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1156499923]
+stream = ExtResource("3_fahql")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

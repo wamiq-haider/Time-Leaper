@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b3uk6j7iale64"]
+
+[ext_resource type="Script" uid="uid://bfarp8cfdqm0o" path="res://scripts/win_zone.gd" id="1_q11my"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q11my"]
+
+[node name="WinZone" type="Area2D"]
+z_index = 10
+rotation = 3.1415927
+collision_layer = 3
+script = ExtResource("1_q11my")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_q11my")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

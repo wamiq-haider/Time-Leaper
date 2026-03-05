@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dq4kprlxf8lro"]
+
+[ext_resource type="Texture2D" uid="uid://bmpwsiiwoctq3" path="res://Assets/gothic-castle-backgroundp.png" id="1_os0eo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ry7g"]
+size = Vector2(96, 14)
+
+[node name="pillarOW" type="StaticBody2D" unique_id=1308709884]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1948418191]
+position = Vector2(80, -205)
+rotation = 4.712389
+texture = ExtResource("1_os0eo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=279021248]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_5ry7g")
+one_way_collision = true

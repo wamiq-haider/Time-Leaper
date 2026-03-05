@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://beinlic1uxkfw"]
+
+[ext_resource type="Script" uid="uid://dst737u42gfay" path="res://Scripts/kill_space.gd" id="1_6gpgq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6gpgq"]
+
+[node name="killSpace" type="Area2D" unique_id=815994272]
+script = ExtResource("1_6gpgq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1085046565]
+wait_time = 0.617
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1306815233]
+shape = SubResource("WorldBoundaryShape2D_6gpgq")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

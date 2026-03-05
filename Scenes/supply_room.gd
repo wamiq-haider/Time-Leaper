@@ -1,0 +1,21 @@
+extends Node2D
+var player_in_range = false
+var has_been_read = false
+var portrait_texture = preload("res://Assets/mainCharacter.png")
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if player_in_range and not DialogueBox.panel.visible:
+		if not has_been_read:
+			has_been_read = true
+			DialogueBox.show_dialogue("This must be a supply room...and that thing right there is a demonic totem. I hoped I would never have to see one again.... but it figures HE has one just kept away in a decrepit old dungeon like it's no big deal.",portrait_texture)
+		else:
+			pass
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		player_in_range = true

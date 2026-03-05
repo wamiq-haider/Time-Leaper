@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bnkgqpr7qsb6y"]
+
+[ext_resource type="Script" uid="uid://cae8j41l5pxa5" path="res://key.gd" id="1_ut0wq"]
+[ext_resource type="AudioStream" uid="uid://s8hubm8oep44" path="res://Assets/keyPickup.mp3" id="2_udxw8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_udxw8"]
+load_path = "res://.godot/imported/key_01.png-3771fa15ef26a745e73b01aaa59b6a41.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_brn0f"]
+radius = 9.055386
+
+[node name="key" type="Node2D" unique_id=2064556882]
+script = ExtResource("1_ut0wq")
+
+[node name="Key01" type="Sprite2D" parent="." unique_id=1697284166]
+position = Vector2(0, -1)
+texture = SubResource("CompressedTexture2D_udxw8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=472840629]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=348459755]
+shape = SubResource("CircleShape2D_brn0f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=137990393]
+stream = ExtResource("2_udxw8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

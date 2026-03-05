@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dcl488gy5mp2e"]
+
+[ext_resource type="Texture2D" uid="uid://gdc1sykmkvk5" path="res://Assets/76db25a8c06c019f5e4280eebba94262.png" id="1_0u11g"]
+[ext_resource type="Script" uid="uid://cr15rhp8dmc06" path="res://Scripts/djump.gd" id="1_74olh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74olh"]
+size = Vector2(54, 31)
+
+[node name="djump" type="Area2D" unique_id=1343966005]
+script = ExtResource("1_74olh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1028947815]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_74olh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1419717936]
+texture = ExtResource("1_0u11g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

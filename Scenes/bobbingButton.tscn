@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ck4wugaq0e7se"]
+
+[ext_resource type="FontFile" uid="uid://b2k0y4uncc47f" path="res://Assets/PixelOperator8.ttf" id="1_qkvpj"]
+[ext_resource type="Script" uid="uid://dm2rig8x3lf2a" path="res://Scenes/bobbing_button.gd" id="1_wa4ul"]
+[ext_resource type="Texture2D" uid="uid://c77v322kgk8rh" path="res://Assets/button.png" id="2_wa4ul"]
+
+[node name="Control" type="Control" unique_id=1152362766]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wa4ul")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=292491130]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1114.0
+offset_bottom = -692.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=625901569]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qkvpj")
+theme_override_font_sizes/font_size = 12
+text = "PRESS E/ENTER"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=464241770]
+layout_mode = 2
+texture = ExtResource("2_wa4ul")
+expand_mode = 3
+stretch_mode = 4

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cvn3stx0d7884"]
+
+[ext_resource type="Script" uid="uid://llqf8i060pbi" path="res://Scripts/stren.gd" id="1_56h6y"]
+[ext_resource type="Texture2D" uid="uid://dq7aqd3hk7q83" path="res://Assets/sword (2).png" id="2_fgv5o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyklc"]
+size = Vector2(36, 32)
+
+[node name="stren" type="Area2D" unique_id=889905451]
+script = ExtResource("1_56h6y")
+metadata/_edit_horizontal_guides_ = [9.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=993756348]
+self_modulate = Color(2.342, 2.342, 2.342, 1)
+scale = Vector2(0.98809534, 0.9880952)
+texture = ExtResource("2_fgv5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=383441522]
+shape = SubResource("RectangleShape2D_gyklc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

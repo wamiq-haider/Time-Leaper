@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://w5khqwbboxwg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uchyk"]
+font_size = 80
+font_color = Color(0.45775273, 0.5189479, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1146.0
+offset_bottom = 651.0
+color = Color(0.7573216, 0.5516501, 0.3189972, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 246.0
+offset_right = 869.0
+offset_bottom = 356.0
+text = "GAME OVER!!!!"
+label_settings = SubResource("LabelSettings_uchyk")
